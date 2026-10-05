@@ -11,6 +11,7 @@ const skills = [
   "Python",
   "C#",
   "1С",
+  "Excel",
   "SQL",
   "MySQL",
   "PostgreSQL",
@@ -88,17 +89,58 @@ export function ResumeDocument() {
 
       <section>
         <SectionTitle>Опыт работы</SectionTitle>
-        <p className="mt-3 text-[16px] leading-6">
-          Коммерческий опыт работы не указан. Ниже — знания и учебная
-          подготовка, на которые опираюсь при поиске первой работы
-          программистом.
-        </p>
 
-        <h3 className="mt-5 text-[16px] font-bold leading-6">
+        <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
+          <div>
+            <p className="text-[16px] font-bold leading-6">2026</p>
+            <p className="text-[16px] leading-6 text-[#767676]">проект</p>
+          </div>
+          <div>
+            <p className="text-[16px] leading-6">Проектная разработка</p>
+            <p className="text-[16px] font-bold leading-6">
+              Инструмент калькуляции себестоимости товара
+            </p>
+            <p className="mt-2 text-[16px] leading-6">
+              Разработал инструмент для калькуляции себестоимости товара на
+              предприятии в форме ИП.
+            </p>
+            <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
+              <li>
+                Считал себестоимость товара по данным предприятия.
+              </li>
+              <li>
+                Собрал расчёт в одном инструменте: себестоимость считается по
+                товару, а не разрозненными вычислениями.
+              </li>
+              <li>
+                Инструмент сделан для предприятия, которое ведёт деятельность
+                как ИП.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
+          <div>
+            <p className="text-[16px] font-bold leading-6">1 год 6 месяцев</p>
+            <p className="text-[16px] leading-6 text-[#767676]">
+              некоммерческий опыт
+            </p>
+          </div>
+          <div>
+            <p className="text-[16px] leading-6">Некоммерческая практика</p>
+            <p className="text-[16px] font-bold leading-6">Excel</p>
+            <p className="mt-2 text-[16px] leading-6">
+              1,5 года некоммерческого опыта в Excel: таблицы и расчёты.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="mt-6 text-[16px] font-bold leading-6">
           Языки программирования
         </h3>
         <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-          <li>Базовые знания Python, C# и 1С.</li>
+          <li>Знания Python, C# и 1С.</li>
           <li>JavaScript.</li>
           <li>Понимание основных алгоритмов и структур данных.</li>
           <li>
@@ -136,6 +178,7 @@ export function ResumeDocument() {
           </li>
           <li>Основы Agile: Scrum и Kanban.</li>
           <li>Навыки работы с технической документацией.</li>
+          <li>Excel — 1,5 года некоммерческого опыта.</li>
         </ul>
       </section>
 
@@ -187,8 +230,8 @@ export function ResumeDocument() {
           <Fact label="Обо мне">
             <div className="flex flex-col gap-3">
               <p>
-                Ищу первую работу программистом на полную занятость, полный
-                день, в Сургуте. К переезду и командировкам не готов.
+                Ищу работу программистом на полную занятость, полный день, в
+                Сургуте. К переезду и командировкам не готов.
               </p>
               <p>
                 Системно и аналитически подхожу к задачам, быстро осваиваю
