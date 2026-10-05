@@ -13,7 +13,7 @@ export function PrintToolbar() {
         type="button"
         variant="outline"
         className="min-h-11 shrink-0 px-4"
-        onClick={() => window.print()}
+        data-print-resume=""
       >
         Сохранить PDF
       </Button>
