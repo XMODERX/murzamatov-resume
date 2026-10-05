@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Badge } from "@/components/ui/badge";
 
 const skills = [
   "JavaScript",
@@ -28,245 +27,206 @@ const skills = [
 
 function SectionTitle({ children }: { children: string }) {
   return (
-    <h2 className="mt-8 text-[22px] font-bold leading-7 tracking-normal text-black">
+    <h2 className="mt-[18px] border-b border-[#d9d9d9] pb-1 text-[14.5px] font-normal leading-5 text-[#767676]">
       {children}
     </h2>
   );
 }
 
-function Fact({ label, children }: { label: string; children: ReactNode }) {
+function Entry({
+  when,
+  note,
+  children,
+}: {
+  when?: string;
+  note?: string;
+  children: ReactNode;
+}) {
   return (
-    <div className="grid grid-cols-1 gap-1 sm:grid-cols-[210px_minmax(0,1fr)] sm:gap-6">
-      <div className="text-[16px] leading-6 text-black">{label}</div>
-      <div className="text-[16px] leading-6 text-black">{children}</div>
+    <div className="mt-3.5 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+      <div>
+        {when ? <p className="text-[14px] font-bold leading-5">{when}</p> : null}
+        {note ? <p className="text-[13px] leading-5 text-[#767676]">{note}</p> : null}
+      </div>
+      <div className="text-[14px] leading-[1.45]">{children}</div>
     </div>
+  );
+}
+
+function Dashes({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-2 flex flex-col gap-1">
+      {items.map((item) => (
+        <li key={item} className="flex gap-1.5">
+          <span aria-hidden="true">-</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
 export function ResumeDocument() {
   return (
-    <article className="resume-sheet mx-auto w-full max-w-[860px] bg-white px-5 py-8 text-black sm:px-10 sm:py-10">
+    <article className="resume-sheet mx-auto w-full max-w-[210mm] bg-white px-[14mm] pb-8 pt-0 text-[#222] shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
+      <div className="resume-topbar -mx-[14mm] mb-6 h-12 bg-[#efefef]" />
+
       <header>
-        <h1 className="text-[32px] font-bold leading-[38px] tracking-normal">
+        <h1 className="text-[28px] font-bold leading-8 tracking-normal">
           Мурзаматов Александр Кабылжанович
         </h1>
-        <p className="mt-3 text-[16px] leading-6">Мужчина, 20 лет, холост, детей нет</p>
-        <p className="mt-3 text-[16px] leading-7">
-          <a href="tel:+79226505952">+7 (922) 650-59-52</a>
+        <p className="mt-1 text-[14px] leading-5">Мужчина, 20 лет</p>
+        <p className="mt-3 text-[14px] leading-5">
+          <a href="tel:+79226505952">+7 (922) 6505952</a>
           <span> — предпочитаемый способ связи</span>
-          <span className="text-[#767676]"> • </span>
-          <span>Telegram: </span>
+          <span> • Telegram: </span>
           <a href="https://t.me/moderzx">@moderzx</a>
-          <span className="text-[#767676]"> • </span>
-          <span>ВКонтакте: </span>
-          <a href="https://vk.ru/moderzx">vk.ru/moderzx</a>
         </p>
-        <p className="text-[16px] leading-6">
+        <p className="text-[14px] leading-5">
           <a href="mailto:Ashyrovsasha19@gmail.com">Ashyrovsasha19@gmail.com</a>
         </p>
-        <p className="mt-3 text-[16px] leading-6">
+        <p className="mt-3 text-[14px] leading-5">
           Проживает: Сургут, Ханты-Мансийский АО — Югра
         </p>
-        <p className="text-[16px] leading-6">Гражданство: Россия</p>
-        <p className="text-[16px] leading-6">
+        <p className="text-[14px] leading-5">
+          Гражданство: Россия, есть разрешение на работу: Россия
+        </p>
+        <p className="text-[14px] leading-5">
           Не готов к переезду, не готов к командировкам
         </p>
       </header>
 
       <section>
         <SectionTitle>Желаемая должность и зарплата</SectionTitle>
-        <p className="mt-3 text-[20px] font-bold leading-7">Программист</p>
-        <p className="mt-3 text-[16px] leading-6">Специализации:</p>
-        <p className="text-[16px] leading-6">— Программист, разработчик</p>
-        <p className="mt-3 text-[16px] leading-6">
-          Тип занятости: полная занятость
-        </p>
-        <p className="text-[16px] leading-6">График работы: полный день</p>
-        <p className="text-[16px] leading-6">
+        <p className="mt-2.5 text-[16px] font-bold leading-6">Программист</p>
+        <p className="mt-2 text-[14px] leading-5">Специализации:</p>
+        <p className="text-[14px] leading-5">— Программист, разработчик</p>
+        <p className="mt-2 text-[14px] leading-5">Тип занятости: полная занятость</p>
+        <p className="text-[14px] leading-5">График работы: полный день</p>
+        <p className="text-[14px] leading-5">
           Формат работы: на месте работодателя
         </p>
       </section>
 
       <section>
-        <SectionTitle>Опыт работы</SectionTitle>
+        <SectionTitle>Опыт работы — 1 год 6 месяцев</SectionTitle>
 
-        <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
-          <div>
-            <p className="text-[16px] font-bold leading-6">2026</p>
-            <p className="text-[16px] leading-6 text-[#767676]">проект</p>
-          </div>
-          <div>
-            <p className="text-[16px] leading-6">Проектная разработка</p>
-            <p className="text-[16px] font-bold leading-6">
-              Инструмент калькуляции себестоимости товара
-            </p>
-            <p className="mt-2 text-[16px] leading-6">
-              Разработал инструмент для калькуляции себестоимости товара на
-              предприятии в форме ИП.
-            </p>
-            <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-              <li>
-                Считал себестоимость товара по данным предприятия.
-              </li>
-              <li>
-                Собрал расчёт в одном инструменте: себестоимость считается по
-                товару, а не разрозненными вычислениями.
-              </li>
-              <li>
-                Инструмент сделан для предприятия, которое ведёт деятельность
-                как ИП.
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Entry when="2026" note="проект">
+          <p className="font-bold leading-5">Проектная разработка</p>
+          <p className="font-bold leading-5">
+            Инструмент калькуляции себестоимости товара
+          </p>
+          <p className="mt-2">
+            Разработал инструмент для калькуляции себестоимости товара на
+            предприятии в форме ИП.
+          </p>
+          <Dashes
+            items={[
+              "Считал себестоимость товара по данным предприятия.",
+              "Собрал расчёт в одном инструменте, чтобы себестоимость считалась по товару.",
+              "Инструмент сделан для предприятия, которое ведёт деятельность как ИП.",
+            ]}
+          />
+        </Entry>
 
-        <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
-          <div>
-            <p className="text-[16px] font-bold leading-6">1 год 6 месяцев</p>
-            <p className="text-[16px] leading-6 text-[#767676]">
-              некоммерческий опыт
-            </p>
-          </div>
-          <div>
-            <p className="text-[16px] leading-6">Некоммерческая практика</p>
-            <p className="text-[16px] font-bold leading-6">Excel</p>
-            <p className="mt-2 text-[16px] leading-6">
-              1,5 года некоммерческого опыта в Excel: таблицы и расчёты.
-            </p>
-          </div>
-        </div>
+        <Entry when="1 год 6 месяцев" note="некоммерческий опыт">
+          <p className="font-bold leading-5">Некоммерческая практика</p>
+          <p className="font-bold leading-5">Excel</p>
+          <p className="mt-2">
+            1,5 года некоммерческого опыта в Excel: таблицы и расчёты.
+          </p>
+        </Entry>
 
-        <h3 className="mt-6 text-[16px] font-bold leading-6">
-          Языки программирования
-        </h3>
-        <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-          <li>Знания Python, C# и 1С.</li>
-          <li>JavaScript.</li>
-          <li>Понимание основных алгоритмов и структур данных.</li>
-          <li>
-            Знание принципов объектно-ориентированного программирования
-            (ООП).
-          </li>
-        </ul>
-
-        <h3 className="mt-5 text-[16px] font-bold leading-6">Веб-разработка</h3>
-        <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-          <li>HTML5, CSS3, SASS.</li>
-          <li>Адаптивная вёрстка.</li>
-          <li>Основы Angular и TypeScript.</li>
-          <li>Базовое понимание работы HTTP и REST API.</li>
-        </ul>
-
-        <h3 className="mt-5 text-[16px] font-bold leading-6">
-          Работа с базами данных
-        </h3>
-        <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-          <li>
-            Создание таблиц, запросы SELECT, INSERT, UPDATE и DELETE.
-          </li>
-          <li>Работа с MySQL, PostgreSQL или SQLite.</li>
-        </ul>
-
-        <h3 className="mt-5 text-[16px] font-bold leading-6">
-          Дополнительные знания
-        </h3>
-        <ul className="mt-2 list-disc pl-5 text-[16px] leading-6">
-          <li>Основы работы с операционными системами Windows и Linux.</li>
-          <li>
-            Понимание жизненного цикла разработки программного обеспечения
-            (SDLC).
-          </li>
-          <li>Основы Agile: Scrum и Kanban.</li>
-          <li>Навыки работы с технической документацией.</li>
-          <li>Excel — 1,5 года некоммерческого опыта.</li>
-        </ul>
+        <Entry>
+          <p className="mt-2">Технологический стек:</p>
+          <Dashes
+            items={[
+              "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП.",
+              "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API.",
+              "Базы данных: создание таблиц, запросы SELECT, INSERT, UPDATE, DELETE. MySQL, PostgreSQL, SQLite.",
+              "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
+              "Excel — 1,5 года некоммерческого опыта.",
+            ]}
+          />
+        </Entry>
       </section>
 
-      <section>
+      <section className="break-inside-avoid">
         <SectionTitle>Образование</SectionTitle>
-        <p className="mt-3 text-[16px] leading-6">Среднее профессиональное</p>
-        <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
-          <p className="text-[16px] font-bold leading-6">2026</p>
-          <div>
-            <p className="text-[16px] leading-6">Среднее профессиональное</p>
-            <p className="text-[16px] font-bold leading-6">
-              Сургутский институт экономики, управления и права
+        <p className="mt-2.5 text-[16px] font-bold leading-6">
+          Среднее профессиональное
+        </p>
+        <Entry when="2026" note="очно">
+          <p className="font-bold leading-5">
+            Сургутский институт экономики, управления и права
+          </p>
+          <p>Информационные системы и программирование, Программист</p>
+        </Entry>
+      </section>
+
+      <section className="break-inside-avoid">
+        <SectionTitle>Навыки</SectionTitle>
+        <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+          <p className="text-[14px] leading-5 text-[#767676]">Знание языков</p>
+          <div className="text-[14px] leading-5">
+            <p>Русский — Родной</p>
+            <p>Английский</p>
+          </div>
+        </div>
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+          <p className="text-[14px] leading-5 text-[#767676]">Навыки</p>
+          <ul className="flex flex-wrap gap-1.5">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="bg-[#f2f2f2] px-2 py-1 text-[13px] leading-4 text-[#333]"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="break-inside-avoid">
+        <SectionTitle>Дополнительная информация</SectionTitle>
+        <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+          <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
+          <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
+            <p>
+              Ищу работу программистом на полную занятость, полный день, в
+              Сургуте. К переезду и командировкам не готов. Системно подхожу к
+              задачам, быстро осваиваю новые инструменты и довожу работу до
+              результата. Внимателен к качеству кода, срокам и технической
+              документации. Медицинская книжка есть. Буду рад познакомиться.
             </p>
-            <p className="text-[16px] leading-6">
-              Информационные системы и программирование, Программист
-            </p>
-            <p className="text-[16px] leading-6">Очная форма обучения</p>
+            <div className="flex flex-col">
+              <p>
+                Телефон: <a href="tel:+79226505952">8 922 650 59 52</a>
+              </p>
+              <p>
+                Телеграм: <a href="https://t.me/moderzx">@moderzx</a>
+              </p>
+              <p>
+                ВКонтакте:{" "}
+                <a href="https://vk.ru/moderzx">https://vk.ru/moderzx</a>
+              </p>
+              <p>
+                GitHub:{" "}
+                <a href="https://github.com/XMODERX">https://github.com/XMODERX</a>
+              </p>
+              <p>
+                Почта:{" "}
+                <a href="mailto:Ashyrovsasha19@gmail.com">
+                  Ashyrovsasha19@gmail.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <SectionTitle>Навыки</SectionTitle>
-        <div className="mt-4 flex flex-col gap-4">
-          <Fact label="Знание языков">
-            <p>Русский — родной</p>
-            <p>Английский</p>
-          </Fact>
-          <Fact label="Навыки">
-            <ul className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <li key={skill}>
-                  <Badge
-                    variant="secondary"
-                    className="h-auto min-h-8 whitespace-normal px-2.5 py-1 text-sm font-normal"
-                  >
-                    {skill}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </Fact>
-        </div>
-      </section>
-
-      <section>
-        <SectionTitle>Дополнительная информация</SectionTitle>
-        <div className="mt-4">
-          <Fact label="Обо мне">
-            <div className="flex flex-col gap-3">
-              <p>
-                Ищу работу программистом на полную занятость, полный день, в
-                Сургуте. К переезду и командировкам не готов.
-              </p>
-              <p>
-                Системно и аналитически подхожу к задачам, быстро осваиваю
-                новые технологии и довожу работу до результата. Внимателен к
-                качеству кода, стандартам разработки и срокам. Умею читать
-                техническую документацию и применять её на практике.
-              </p>
-              <p>Медицинская книжка есть.</p>
-              <p>Буду рад познакомиться.</p>
-            </div>
-          </Fact>
-        </div>
-        <div className="mt-5 flex flex-col gap-1 text-[16px] leading-6">
-          <p>
-            Телефон: <a href="tel:+79226505952">+7 (922) 650-59-52</a>
-          </p>
-          <p>
-            Телеграм: <a href="https://t.me/moderzx">@moderzx</a>
-          </p>
-          <p>
-            ВКонтакте: <a href="https://vk.ru/moderzx">https://vk.ru/moderzx</a>
-          </p>
-          <p>
-            GitHub: <a href="https://github.com/XMODERX">https://github.com/XMODERX</a>
-          </p>
-          <p>
-            Почта:{" "}
-            <a href="mailto:Ashyrovsasha19@gmail.com">
-              Ashyrovsasha19@gmail.com
-            </a>
-          </p>
-        </div>
-      </section>
-
-      <footer className="mt-10 border-t border-[#e6e6e6] pt-4 text-[13px] leading-5 text-[#767676]">
+      <footer className="screen-footer mt-8 text-[11px] leading-4 text-[#b0b0b0]">
         Мурзаматов Александр • Резюме обновлено 5 октября 2026
       </footer>
     </article>
