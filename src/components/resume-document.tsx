@@ -55,10 +55,10 @@ function Entry({
 
 function Dashes({ items }: { items: string[] }) {
   return (
-    <ul className="mt-2 flex flex-col gap-1">
+    <ul className="mt-1.5 flex flex-col gap-1">
       {items.map((item) => (
-        <li key={item} className="flex gap-1.5">
-          <span aria-hidden="true">-</span>
+        <li key={item} className="flex gap-2">
+          <span aria-hidden="true">—</span>
           <span>{item}</span>
         </li>
       ))}
@@ -75,15 +75,22 @@ export function ResumeDocument() {
         <h1 className="text-[28px] font-bold leading-8 tracking-normal">
           Мурзаматов Александр Кабылжанович
         </h1>
-        <p className="mt-1 text-[14px] leading-5">Мужчина, 20 лет</p>
+        <p className="mt-1 text-[14px] leading-5">Мужчина</p>
         <p className="mt-3 text-[14px] leading-5">
           <a href="tel:+79226505952">+7 (922) 6505952</a>
           <span> — предпочитаемый способ связи</span>
-          <span> • Telegram: </span>
-          <a href="https://t.me/moderzx">@moderzx</a>
         </p>
         <p className="text-[14px] leading-5">
           <a href="mailto:Ashyrovsasha19@gmail.com">Ashyrovsasha19@gmail.com</a>
+        </p>
+        <p className="text-[14px] leading-5">
+          telegram: <a href="https://t.me/moderzx">@moderzx</a>
+        </p>
+        <p className="text-[14px] leading-5">
+          vk: <a href="https://vk.ru/moderzx">https://vk.ru/moderzx</a>
+        </p>
+        <p className="text-[14px] leading-5">
+          github: <a href="https://github.com/XMODERX">https://github.com/XMODERX</a>
         </p>
         <p className="mt-3 text-[14px] leading-5">
           Проживает: Сургут, Ханты-Мансийский АО — Югра
@@ -102,9 +109,8 @@ export function ResumeDocument() {
         <p className="mt-2 text-[14px] leading-5">Специализации:</p>
         <p className="text-[14px] leading-5">— Программист, разработчик</p>
         <p className="mt-2 text-[14px] leading-5">Тип занятости: полная занятость</p>
-        <p className="text-[14px] leading-5">График работы: полный день</p>
         <p className="text-[14px] leading-5">
-          Формат работы: на месте работодателя
+          Формат работы: на месте работодателя, удалённо, гибрид
         </p>
       </section>
 
@@ -120,10 +126,11 @@ export function ResumeDocument() {
             Разработал инструмент для калькуляции себестоимости товара на
             предприятии в форме ИП.
           </p>
+          <p className="mt-3">Обязанности:</p>
           <Dashes
             items={[
-              "Считал себестоимость товара по данным предприятия.",
-              "Собрал расчёт в одном инструменте, чтобы себестоимость считалась по товару.",
+              "Считал себестоимость товара по данным предприятия;",
+              "Собрал расчёт в одном инструменте, чтобы себестоимость считалась по товару;",
               "Инструмент сделан для предприятия, которое ведёт деятельность как ИП.",
             ]}
           />
@@ -134,15 +141,12 @@ export function ResumeDocument() {
             Занимался администрированием, поддержкой и оптимизацией плагинов
             для серверов.
           </p>
-        </Entry>
-
-        <Entry>
-          <p className="mt-2">Технологический стек:</p>
+          <p className="mt-3">Инструменты:</p>
           <Dashes
             items={[
-              "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП.",
-              "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API.",
-              "Базы данных: MySQL, PostgreSQL, SQLite, Supabase.",
+              "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП;",
+              "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API;",
+              "Базы данных: MySQL, PostgreSQL, SQLite, Supabase;",
               "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
             ]}
           />
@@ -152,9 +156,9 @@ export function ResumeDocument() {
       <section className="break-inside-avoid">
         <SectionTitle>Образование</SectionTitle>
         <p className="mt-2.5 text-[16px] font-bold leading-6">
-          Среднее профессиональное
+          Среднее специальное
         </p>
-        <Entry when="2026" note="очно">
+        <Entry when="2026" note="Среднее специальное">
           <p className="font-bold leading-5">
             Сургутский институт экономики, управления и права
           </p>
@@ -177,7 +181,7 @@ export function ResumeDocument() {
             {skills.map((skill) => (
               <li
                 key={skill}
-                className="bg-[#f2f2f2] px-2 py-1 text-[13px] leading-4 text-[#333]"
+                className="rounded-sm bg-[#ececec] px-2 py-1 text-[13px] leading-4 text-[#333]"
               >
                 {skill}
               </li>
@@ -191,35 +195,26 @@ export function ResumeDocument() {
         <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
-            <p>
-              Ищу работу программистом: полная занятость, полный день, Сургут.
-              Переезд и командировки не рассматриваю. Разбираю задачу по
-              шагам, быстро осваиваю новые инструменты и довожу её до
-              результата. Слежу за качеством кода и сроками, опираюсь на
-              техническую документацию. Буду рад познакомиться.
-            </p>
-            <div className="flex flex-col">
+            <div>
               <p>
-                Телефон: <a href="tel:+79226505952">8 922 650 59 52</a>
+                num: <a href="tel:+79226505952">+7 922 650-59-52</a>
               </p>
               <p>
-                Телеграм: <a href="https://t.me/moderzx">@moderzx</a>
+                tg: <a href="https://t.me/moderzx">@moderzx</a>
               </p>
               <p>
-                ВКонтакте:{" "}
-                <a href="https://vk.ru/moderzx">https://vk.ru/moderzx</a>
+                vk: <a href="https://vk.ru/moderzx">https://vk.ru/moderzx</a>
               </p>
               <p>
-                GitHub:{" "}
-                <a href="https://github.com/XMODERX">https://github.com/XMODERX</a>
-              </p>
-              <p>
-                Почта:{" "}
+                email:{" "}
                 <a href="mailto:Ashyrovsasha19@gmail.com">
                   Ashyrovsasha19@gmail.com
                 </a>
               </p>
             </div>
+            <p>
+              Дополнительно знаю веб: HTML, CSS/SASS, JS/TS, Angular, Git
+            </p>
           </div>
         </div>
       </section>
