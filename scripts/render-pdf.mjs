@@ -17,10 +17,10 @@ await page.pdf({
   headerTemplate: "<div></div>",
   footerTemplate: `
     <div style="width:100%; font-size:9px; color:#b0b0b0; padding:0 14mm 6mm; font-family:Arial, sans-serif;">
-      Мурзаматов Александр • Резюме обновлено 5 октября 2026
+      Мурзаматов Александр • Резюме обновлено 6 октября 2026
     </div>
   `,
-  margin: { top: "8mm", right: "0", bottom: "16mm", left: "0" },
+  margin: { top: "12mm", right: "0", bottom: "16mm", left: "0" },
 });
 
 await browser.close();

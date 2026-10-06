@@ -14,6 +14,7 @@ const skills = [
   "MySQL",
   "PostgreSQL",
   "SQLite",
+  "Supabase",
   "REST API",
   "HTTP",
   "ООП",
@@ -68,7 +69,7 @@ function Dashes({ items }: { items: string[] }) {
 export function ResumeDocument() {
   return (
     <article className="resume-sheet mx-auto w-full max-w-[210mm] bg-white px-[14mm] pb-8 pt-0 text-[#222] shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
-      <div className="resume-topbar -mx-[14mm] mb-6 h-12 bg-[#efefef]" />
+      <div className="resume-topbar -mx-[14mm] -mt-[12mm] mb-6 h-12 bg-[#efefef]" />
 
       <header>
         <h1 className="text-[28px] font-bold leading-8 tracking-normal">
@@ -108,7 +109,7 @@ export function ResumeDocument() {
       </section>
 
       <section>
-        <SectionTitle>Опыт работы — 1,4 года</SectionTitle>
+        <SectionTitle>Опыт работы</SectionTitle>
 
         <Entry when="2026" note="проект">
           <p className="font-bold leading-5">Проектная разработка</p>
@@ -135,19 +136,13 @@ export function ResumeDocument() {
           </p>
         </Entry>
 
-        <Entry when="1,4 года" note="некоммерческий опыт">
-          <p className="font-bold leading-5">Некоммерческая практика</p>
-          <p className="font-bold leading-5">Excel</p>
-          <p className="mt-2">1,4 года некоммерческого опыта в Excel.</p>
-        </Entry>
-
         <Entry>
           <p className="mt-2">Технологический стек:</p>
           <Dashes
             items={[
               "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП.",
               "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API.",
-              "Базы данных: MySQL, PostgreSQL, SQLite.",
+              "Базы данных: MySQL, PostgreSQL, SQLite, Supabase.",
               "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
             ]}
           />
@@ -197,11 +192,11 @@ export function ResumeDocument() {
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
             <p>
-              Ищу работу программистом на полную занятость, полный день, в
-              Сургуте. К переезду и командировкам не готов. Системно подхожу к
-              задачам, быстро осваиваю новые инструменты и довожу работу до
-              результата. Внимателен к качеству кода, срокам и технической
-              документации. Медицинская книжка есть. Буду рад познакомиться.
+              Ищу работу программистом: полная занятость, полный день, Сургут.
+              Переезд и командировки не рассматриваю. Разбираю задачу по
+              шагам, быстро осваиваю новые инструменты и довожу её до
+              результата. Слежу за качеством кода и сроками, опираюсь на
+              техническую документацию. Буду рад познакомиться.
             </p>
             <div className="flex flex-col">
               <p>
@@ -230,7 +225,7 @@ export function ResumeDocument() {
       </section>
 
       <footer className="screen-footer mt-8 text-[11px] leading-4 text-[#b0b0b0]">
-        Мурзаматов Александр • Резюме обновлено 5 октября 2026
+        Мурзаматов Александр • Резюме обновлено 6 октября 2026
       </footer>
     </article>
   );
