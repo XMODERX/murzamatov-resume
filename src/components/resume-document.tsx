@@ -10,7 +10,6 @@ const skills = [
   "Python",
   "C#",
   "1С",
-  "Excel",
   "SQL",
   "MySQL",
   "PostgreSQL",
@@ -109,7 +108,7 @@ export function ResumeDocument() {
       </section>
 
       <section>
-        <SectionTitle>Опыт работы — 1 год 6 месяцев</SectionTitle>
+        <SectionTitle>Опыт работы — 1,4 года</SectionTitle>
 
         <Entry when="2026" note="проект">
           <p className="font-bold leading-5">Проектная разработка</p>
@@ -127,14 +126,19 @@ export function ResumeDocument() {
               "Инструмент сделан для предприятия, которое ведёт деятельность как ИП.",
             ]}
           />
+          <p className="mt-3 font-bold leading-5">
+            Администрирование плагинов для серверов
+          </p>
+          <p className="mt-2">
+            Занимался администрированием, поддержкой и оптимизацией плагинов
+            для серверов.
+          </p>
         </Entry>
 
-        <Entry when="1 год 6 месяцев" note="некоммерческий опыт">
+        <Entry when="1,4 года" note="некоммерческий опыт">
           <p className="font-bold leading-5">Некоммерческая практика</p>
           <p className="font-bold leading-5">Excel</p>
-          <p className="mt-2">
-            1,5 года некоммерческого опыта в Excel: таблицы и расчёты.
-          </p>
+          <p className="mt-2">1,4 года некоммерческого опыта в Excel.</p>
         </Entry>
 
         <Entry>
@@ -143,9 +147,8 @@ export function ResumeDocument() {
             items={[
               "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП.",
               "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API.",
-              "Базы данных: создание таблиц, запросы SELECT, INSERT, UPDATE, DELETE. MySQL, PostgreSQL, SQLite.",
+              "Базы данных: MySQL, PostgreSQL, SQLite.",
               "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
-              "Excel — 1,5 года некоммерческого опыта.",
             ]}
           />
         </Entry>
@@ -170,7 +173,7 @@ export function ResumeDocument() {
           <p className="text-[14px] leading-5 text-[#767676]">Знание языков</p>
           <div className="text-[14px] leading-5">
             <p>Русский — Родной</p>
-            <p>Английский</p>
+            <p>Английский — A2 — Элементарный</p>
           </div>
         </div>
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
