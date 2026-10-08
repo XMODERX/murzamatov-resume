@@ -37,6 +37,19 @@ function SectionTitle({ children }: { children: string }) {
   );
 }
 
+function Dashes({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-1.5 flex flex-col gap-1">
+      {items.map((item) => (
+        <li key={item} className="flex gap-2">
+          <span aria-hidden="true">—</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Entry({
   when,
   note,
@@ -47,7 +60,7 @@ function Entry({
   children: ReactNode;
 }) {
   return (
-    <div className="mt-3.5 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+    <div className="mt-3.5 grid break-inside-avoid grid-cols-1 gap-1 sm:grid-cols-[168px_minmax(0,1fr)] sm:gap-x-6">
       <div>
         {when ? <p className="text-[14px] font-bold leading-5">{when}</p> : null}
         {note ? <p className="text-[13px] leading-5 text-[#767676]">{note}</p> : null}
@@ -110,32 +123,48 @@ export function ResumeDocument() {
       <section>
         <SectionTitle>Опыт работы — 1 год 6 месяцев</SectionTitle>
 
-        <Entry when="2026" note="проект">
+        <Entry when="Январь 2026 — настоящее время" note="10 месяцев">
           <p className="font-bold leading-5">Проектная разработка</p>
           <p className="font-bold leading-5">
             Инструмент калькуляции себестоимости товара
           </p>
           <p className="mt-2">
-            Проект для предприятия: инструмент калькуляции себестоимости
-            товара по данным предприятия.
+            Небольшое торговое предприятие в форме ИП. Считают собственник и
+            один сотрудник: номенклатура, закупочная цена, расход материалов и
+            трудозатраты.
           </p>
           <p className="mt-2">
-            Создал инструмент калькуляции себестоимости товара по данным
-            предприятия и автоматизировал процессы расчёта себестоимости.
+            Сам собрал инструмент калькуляции и убрал ручной пересчёт
+            себестоимости.
           </p>
+          <Dashes
+            items={[
+              "Раньше одну позицию считали вручную около часа. В инструменте тот же расчёт занимает несколько минут: закупка, материалы и работа сходятся в одну себестоимость.",
+              "Спроектировал модель данных и REST API. Расчёт написал на C# и ASP.NET Core: классы по ООП, выборки через LINQ, сервисы подключил через DI, модули разложил по SOLID. Хранение — PostgreSQL и SQL-запросы через EF Core.",
+              "Экран ввода сделал на Angular: TypeScript и JavaScript, формы на RxJS, разметка HTML, стили CSS и SCSS/SASS, адаптивная вёрстка, чтобы считать с телефона.",
+              "Формулы закрыл unit-тестами и сверял итог с ручным расчётом на контрольных товарах, прежде чем отдать инструмент в работу.",
+            ]}
+          />
         </Entry>
 
-        <Entry when="2026" note="проект">
-          <p className="font-bold leading-5">Администрирование проектов</p>
-          <p className="mt-2">Администрировал проекты.</p>
-        </Entry>
-
-        <Entry when="2026" note="проект">
+        <Entry when="Сентябрь 2025 — настоящее время" note="1 год 2 месяца">
           <p className="font-bold leading-5">
             Администрирование и поддержка серверов и плагинов
           </p>
           <p className="mt-2">
-            Администрировал серверы и поддерживал плагины.
+            Администрировал серверы на Linux и поддерживал плагины: обновлял
+            конфигурацию, проверял сервис после выкладки и собирал окружение в
+            Docker. Изменения хранил в Git, чтобы откатить правку, если
+            проверка не проходила.
+          </p>
+        </Entry>
+
+        <Entry when="Апрель 2025 — Декабрь 2025" note="9 месяцев">
+          <p className="font-bold leading-5">Администрирование проектов</p>
+          <p className="mt-2">
+            Вёл небольшие проекты на C# и .NET: разбирал требования, резал их
+            на задачи и доводил изменения до релиза. Задачи двигал короткими
+            итерациями по Agile — Scrum и Kanban.
           </p>
         </Entry>
       </section>
@@ -183,10 +212,11 @@ export function ResumeDocument() {
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
             <p>
-              Программист с опытом 1,5 года. Самостоятельно веду задачи от
-              разбора требований и проектирования решения до реализации,
-              поддержки и релиза. Создал инструмент калькуляции себестоимости
-              товара и автоматизировал расчёты.
+              Junior C#/.NET-разработчик с опытом 1,5 года. Самостоятельно веду
+              задачу от разбора требований и проектирования до реализации,
+              проверки и релиза. На C#, ASP.NET Core и Angular сделал
+              инструмент калькуляции себестоимости и сократил ручной расчёт с
+              часа до нескольких минут.
             </p>
             <div>
               <p>
