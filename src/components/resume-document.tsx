@@ -1,37 +1,52 @@
 import type { ReactNode } from "react";
 
-const skills = [
-  "C#",
-  ".NET",
-  "ASP.NET Core",
-  "EF Core",
-  "SQL",
-  "PostgreSQL",
-  "REST API",
-  "LINQ",
-  "DI",
-  "Docker",
-  "Git",
-  "ООП",
-  "SOLID",
-  "Unit-тесты",
-  "JavaScript",
-  "TypeScript",
-  "HTML",
-  "CSS",
-  "SCSS/SASS",
-  "Angular",
-  "RxJS",
-  "Адаптивная вёрстка",
-  "Linux",
-  "Agile",
-  "Scrum",
-  "Kanban",
+const skillGroups = [
+  {
+    label: "Backend",
+    items: [
+      "C#",
+      ".NET",
+      "ASP.NET Core",
+      "EF Core",
+      "SQL",
+      "PostgreSQL",
+      "REST API",
+      "LINQ",
+      "DI",
+    ],
+  },
+  {
+    label: "Frontend",
+    items: [
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "RxJS",
+      "HTML",
+      "CSS",
+      "SCSS/SASS",
+      "Адаптивная вёрстка",
+    ],
+  },
+  {
+    label: "Практики",
+    items: [
+      "ООП",
+      "SOLID",
+      "Unit-тесты",
+      "Docker",
+      "Git",
+      "Linux",
+      "Agile",
+      "Scrum",
+      "Kanban",
+    ],
+  },
 ];
 
 function SectionTitle({ children }: { children: string }) {
   return (
-    <h2 className="mt-[18px] border-b border-[#d9d9d9] pb-1 text-[14.5px] font-normal leading-5 text-[#767676]">
+    <h2 className="mt-3.5 border-b border-[#d9d9d9] pb-1 text-[14.5px] font-normal leading-5 text-[#767676]">
       {children}
     </h2>
   );
@@ -60,7 +75,7 @@ function Entry({
   children: ReactNode;
 }) {
   return (
-    <div className="mt-3.5 grid break-inside-avoid grid-cols-1 gap-1 sm:grid-cols-[168px_minmax(0,1fr)] sm:gap-x-6">
+    <div className="mt-3 grid break-inside-avoid grid-cols-1 gap-1 sm:grid-cols-[168px_minmax(0,1fr)] sm:gap-x-6">
       <div>
         {when ? <p className="text-[14px] font-bold leading-5">{when}</p> : null}
         {note ? <p className="text-[13px] leading-5 text-[#767676]">{note}</p> : null}
@@ -72,7 +87,7 @@ function Entry({
 
 export function ResumeDocument() {
   return (
-    <article className="resume-sheet mx-auto w-full max-w-[210mm] bg-white px-[14mm] pb-8 pt-0 text-[#222] shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
+    <article className="resume-sheet mx-auto w-full max-w-[210mm] bg-white px-[14mm] pb-2 pt-0 text-[#222] shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
       <div className="resume-topbar -mx-[14mm] -mt-[12mm] mb-6 h-12 bg-[#efefef]" />
 
       <header>
@@ -128,21 +143,22 @@ export function ResumeDocument() {
           <p className="font-bold leading-5">
             Инструмент калькуляции себестоимости товара
           </p>
-          <p className="mt-2">
-            Небольшое торговое предприятие в форме ИП. Считают собственник и
-            один сотрудник: номенклатура, закупочная цена, расход материалов и
-            трудозатраты.
+          <p className="mt-1 text-[13px] leading-5 text-[#767676]">
+            Проектная занятость, совмещал с администрированием серверов
           </p>
           <p className="mt-2">
-            Сам собрал инструмент калькуляции и убрал ручной пересчёт
-            себестоимости.
+            Проект для небольшого торгового ИП, где собственник и один
+            сотрудник рассчитывают себестоимость по номенклатуре, закупочной
+            цене, расходу материалов и трудозатратам. Уточнил у них состав
+            данных и самостоятельно разработал инструмент калькуляции, заменив
+            ручной пересчёт.
           </p>
           <Dashes
             items={[
-              "Раньше одну позицию считали вручную около часа. В инструменте тот же расчёт занимает несколько минут: закупка, материалы и работа сходятся в одну себестоимость.",
-              "Спроектировал модель данных и REST API. Расчёт написал на C# и ASP.NET Core: классы по ООП, выборки через LINQ, сервисы подключил через DI, модули разложил по SOLID. Хранение — PostgreSQL и SQL-запросы через EF Core.",
-              "Экран ввода сделал на Angular: TypeScript и JavaScript, формы на RxJS, разметка HTML, стили CSS и SCSS/SASS, адаптивная вёрстка, чтобы считать с телефона.",
-              "Формулы закрыл unit-тестами и сверял итог с ручным расчётом на контрольных товарах, прежде чем отдать инструмент в работу.",
+              "Инструмент передан в работу собственнику и сотруднику: одну позицию считают за несколько минут вместо примерно часа вручную.",
+              "Спроектировал модель данных и REST API. Расчёт собрал на C# и ASP.NET Core, данные хранил в PostgreSQL через EF Core.",
+              "Экран ввода сделал на Angular с адаптивной вёрсткой, чтобы считать себестоимость с телефона.",
+              "Покрыл формулы unit-тестами и перед передачей инструмента в работу сверил результаты с ручным расчётом на контрольных товарах.",
             ]}
           />
         </Entry>
@@ -151,16 +167,22 @@ export function ResumeDocument() {
           <p className="font-bold leading-5">
             Администрирование и поддержка серверов и плагинов
           </p>
+          <p className="mt-1 text-[13px] leading-5 text-[#767676]">
+            Частичная занятость, параллельно с проектной разработкой
+          </p>
           <p className="mt-2">
             Администрировал серверы на Linux и поддерживал плагины: обновлял
-            конфигурацию, проверял сервис после выкладки и собирал окружение в
-            Docker. Изменения хранил в Git, чтобы откатить правку, если
-            проверка не проходила.
+            конфигурацию и запускал сервисы в Docker. После выкладки проверял
+            работу сервиса; изменения конфигурации сохранял в Git, чтобы при
+            неудачной проверке вернуть предыдущую версию.
           </p>
         </Entry>
 
         <Entry when="Апрель 2025 — Декабрь 2025" note="9 месяцев">
           <p className="font-bold leading-5">Администрирование проектов</p>
+          <p className="mt-1 text-[13px] leading-5 text-[#767676]">
+            Проектная работа, апрель–декабрь 2025
+          </p>
           <p className="mt-2">
             Вёл небольшие проекты на C# и .NET: разбирал требования, резал их
             на задачи и доводил изменения до релиза. Задачи двигал короткими
@@ -191,18 +213,25 @@ export function ResumeDocument() {
             <p>Английский — A2 — Элементарный</p>
           </div>
         </div>
-        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
-          <p className="text-[14px] leading-5 text-[#767676]">Навыки</p>
-          <ul className="flex flex-wrap gap-1.5">
-            {skills.map((skill) => (
-              <li
-                key={skill}
-                className="rounded-sm bg-[#ececec] px-2 py-1 text-[13px] leading-4 text-[#333]"
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
+        <div className="mt-2.5 flex flex-col gap-1.5">
+          {skillGroups.map((group) => (
+            <div
+              key={group.label}
+              className="grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6"
+            >
+              <p className="text-[14px] leading-5 text-[#767676]">{group.label}</p>
+              <ul className="flex flex-wrap gap-1.5">
+                {group.items.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-sm bg-[#ececec] px-2 py-1 text-[13px] leading-4 text-[#333]"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -214,9 +243,9 @@ export function ResumeDocument() {
             <p>
               Junior C#/.NET-разработчик с опытом 1,5 года. Самостоятельно веду
               задачу от разбора требований и проектирования до реализации,
-              проверки и релиза. На C#, ASP.NET Core и Angular сделал
-              инструмент калькуляции себестоимости и сократил ручной расчёт с
-              часа до нескольких минут.
+              проверки и релиза. На C#, ASP.NET Core и Angular создал
+              инструмент калькуляции себестоимости, сократив расчёт одной
+              позиции с примерно часа до нескольких минут.
             </p>
             <div>
               <p>
