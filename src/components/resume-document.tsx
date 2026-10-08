@@ -75,7 +75,7 @@ export function ResumeDocument() {
         <h1 className="text-[28px] font-bold leading-8 tracking-normal">
           Мурзаматов Александр Кабылжанович
         </h1>
-        <p className="mt-1 text-[14px] leading-5">Мужчина</p>
+        <p className="mt-1 text-[14px] leading-5">Мужчина, 20 лет</p>
         <p className="mt-3 text-[14px] leading-5">
           <a href="tel:+79226505952">+7 (922) 6505952</a>
           <span> — предпочитаемый способ связи</span>
@@ -115,7 +115,7 @@ export function ResumeDocument() {
       </section>
 
       <section>
-        <SectionTitle>Опыт работы</SectionTitle>
+        <SectionTitle>Опыт работы — 1 год 6 месяцев</SectionTitle>
 
         <Entry when="2026" note="проект">
           <p className="font-bold leading-5">Проектная разработка</p>
@@ -134,14 +134,24 @@ export function ResumeDocument() {
               "Инструмент сделан для предприятия, которое ведёт деятельность как ИП.",
             ]}
           />
-          <p className="mt-3 font-bold leading-5">
-            Администрирование плагинов для серверов
+        </Entry>
+
+        <Entry when="2026" note="проект">
+          <p className="font-bold leading-5">Администрирование проектов</p>
+          <p className="mt-2">Занимался администрированием проектов.</p>
+        </Entry>
+
+        <Entry when="2026" note="проект">
+          <p className="font-bold leading-5">
+            Администрирование и поддержка серверов и плагинов
           </p>
           <p className="mt-2">
-            Занимался администрированием, поддержкой и оптимизацией плагинов
-            для серверов.
+            Занимался администрированием и поддержкой серверов и плагинов.
           </p>
-          <p className="mt-3">Инструменты:</p>
+        </Entry>
+
+        <Entry>
+          <p>Инструменты:</p>
           <Dashes
             items={[
               "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП;",
@@ -195,6 +205,11 @@ export function ResumeDocument() {
         <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
+            <p>
+              Программист с суммарным опытом 1,5 года. Самостоятельно веду
+              задачи от разбора требований и проектирования решения до
+              реализации, поддержки и релиза.
+            </p>
             <div>
               <p>
                 num: <a href="tel:+79226505952">+7 922 650-59-52</a>
@@ -212,15 +227,12 @@ export function ResumeDocument() {
                 </a>
               </p>
             </div>
-            <p>
-              Дополнительно знаю веб: HTML, CSS/SASS, JS/TS, Angular, Git
-            </p>
           </div>
         </div>
       </section>
 
       <footer className="screen-footer mt-8 text-[11px] leading-4 text-[#b0b0b0]">
-        Мурзаматов Александр • Резюме обновлено 6 октября 2026
+        Мурзаматов Александр • Резюме обновлено 8 октября 2026
       </footer>
     </article>
   );
