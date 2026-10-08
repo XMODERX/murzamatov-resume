@@ -14,6 +14,10 @@ const skills = [
   "Unit-тесты",
   "JavaScript",
   "TypeScript",
+  "HTML",
+  "CSS",
+  "SCSS/SASS",
+  "Angular",
   "Python",
   "Linux",
   "Agile",
@@ -151,7 +155,8 @@ export function ResumeDocument() {
             items={[
               "Языки и платформа: C#, .NET, ASP.NET Core, JavaScript, TypeScript, Python. ООП и SOLID;",
               "Данные и API: EF Core, SQL, PostgreSQL, REST API;",
-              "Инструменты: Git, Linux, юнит-тесты, Agile (Scrum, Kanban).",
+              "Инструменты: Git, Linux, юнит-тесты, Agile (Scrum, Kanban);",
+              "Дополнительно: HTML, CSS, SCSS/SASS, Angular, JavaScript, TypeScript.",
             ]}
           />
         </Entry>
@@ -191,6 +196,14 @@ export function ResumeDocument() {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
+          <p className="text-[14px] leading-5 text-[#767676]">
+            Дополнительные знания
+          </p>
+          <p className="text-[14px] leading-5">
+            HTML, CSS, SCSS/SASS, Angular, JavaScript, TypeScript
+          </p>
         </div>
       </section>
 
