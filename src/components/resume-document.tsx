@@ -1,22 +1,22 @@
 import type { ReactNode } from "react";
 
 const skills = [
+  "C#",
   "JavaScript",
   "TypeScript",
-  "HTML5",
-  "CSS3",
+  "Python",
+  "1С",
+  "HTML",
+  "CSS",
   "SASS",
   "Angular",
-  "Python",
-  "C#",
-  "1С",
   "SQL",
-  "MySQL",
   "PostgreSQL",
+  "MySQL",
   "SQLite",
   "Supabase",
   "REST API",
-  "HTTP",
+  "Git",
   "ООП",
   "Linux",
   "Windows",
@@ -123,15 +123,14 @@ export function ResumeDocument() {
             Инструмент калькуляции себестоимости товара
           </p>
           <p className="mt-2">
-            Разработал инструмент для калькуляции себестоимости товара на
-            предприятии в форме ИП.
+            Автоматизировал процессы расчётов и создал инструмент калькуляции
+            себестоимости товара.
           </p>
           <p className="mt-3">Обязанности:</p>
           <Dashes
             items={[
-              "Считал себестоимость товара по данным предприятия;",
-              "Собрал расчёт в одном инструменте, чтобы себестоимость считалась по товару;",
-              "Инструмент сделан для предприятия, которое ведёт деятельность как ИП.",
+              "Автоматизировал процессы расчёта себестоимости;",
+              "Создал инструмент для расчётов по данным предприятия.",
             ]}
           />
         </Entry>
@@ -154,8 +153,8 @@ export function ResumeDocument() {
           <p>Инструменты:</p>
           <Dashes
             items={[
-              "Языки: знания Python, C# и 1С, JavaScript. Алгоритмы и структуры данных, принципы ООП;",
-              "Веб: HTML5, CSS3, SASS, адаптивная вёрстка, основы Angular и TypeScript, HTTP и REST API;",
+              "Языки: C#, JavaScript, TypeScript, Python, 1С. Алгоритмы и структуры данных, принципы ООП;",
+              "Веб: HTML, CSS, SASS, адаптивная вёрстка, Angular, REST API, Git;",
               "Базы данных: MySQL, PostgreSQL, SQLite, Supabase;",
               "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
             ]}
