@@ -2,24 +2,20 @@ import type { ReactNode } from "react";
 
 const skills = [
   "C#",
-  "JavaScript",
-  "TypeScript",
-  "Python",
-  "1С",
-  "HTML",
-  "CSS",
-  "SASS",
-  "Angular",
+  ".NET",
+  "ASP.NET Core",
+  "EF Core",
   "SQL",
   "PostgreSQL",
-  "MySQL",
-  "SQLite",
-  "Supabase",
   "REST API",
   "Git",
   "ООП",
+  "SOLID",
+  "Unit-тесты",
+  "JavaScript",
+  "TypeScript",
+  "Python",
   "Linux",
-  "Windows",
   "Agile",
   "Scrum",
   "Kanban",
@@ -153,10 +149,9 @@ export function ResumeDocument() {
           <p>Инструменты:</p>
           <Dashes
             items={[
-              "Языки: C#, JavaScript, TypeScript, Python, 1С. Алгоритмы и структуры данных, принципы ООП;",
-              "Веб: HTML, CSS, SASS, адаптивная вёрстка, Angular, REST API, Git;",
-              "Базы данных: MySQL, PostgreSQL, SQLite, Supabase;",
-              "Дополнительно: Windows и Linux, жизненный цикл разработки (SDLC), Agile (Scrum, Kanban), техническая документация.",
+              "Языки и платформа: C#, .NET, ASP.NET Core, JavaScript, TypeScript, Python. ООП и SOLID;",
+              "Данные и API: EF Core, SQL, PostgreSQL, REST API;",
+              "Инструменты: Git, Linux, юнит-тесты, Agile (Scrum, Kanban).",
             ]}
           />
         </Entry>
