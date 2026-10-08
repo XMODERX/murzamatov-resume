@@ -110,7 +110,9 @@ export function ResumeDocument() {
 
       <section>
         <SectionTitle>Желаемая должность и зарплата</SectionTitle>
-        <p className="mt-2.5 text-[16px] font-bold leading-6">Программист</p>
+        <p className="mt-2.5 text-[16px] font-bold leading-6">
+          Backend / Frontend разработчик
+        </p>
         <p className="mt-2 text-[14px] leading-5">Специализации:</p>
         <p className="text-[14px] leading-5">— Программист, разработчик</p>
         <p className="mt-2 text-[14px] leading-5">Тип занятости: полная занятость</p>
@@ -142,7 +144,9 @@ export function ResumeDocument() {
 
         <Entry when="2026" note="проект">
           <p className="font-bold leading-5">Администрирование проектов</p>
-          <p className="mt-2">Занимался администрированием проектов.</p>
+          <p className="mt-2">
+            Вёл проекты от постановки задач до сдачи результата.
+          </p>
         </Entry>
 
         <Entry when="2026" note="проект">
@@ -150,7 +154,8 @@ export function ResumeDocument() {
             Администрирование и поддержка серверов и плагинов
           </p>
           <p className="mt-2">
-            Занимался администрированием и поддержкой серверов и плагинов.
+            Поддерживал серверы и плагины в рабочем состоянии и оптимизировал
+            их работу.
           </p>
         </Entry>
 
@@ -217,8 +222,9 @@ export function ResumeDocument() {
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
             <p>
-              Программист с суммарным опытом 1,5 года. Самостоятельно веду
-              задачи от разбора требований и проектирования решения до
+              Backend / Frontend разработчик с опытом 1,5 года. Делаю
+              серверную часть на C#, .NET и ASP.NET Core и интерфейсы на
+              Angular и TypeScript: от требований и проектирования до
               реализации, поддержки и релиза.
             </p>
             <div>
