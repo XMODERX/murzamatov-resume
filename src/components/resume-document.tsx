@@ -8,6 +8,9 @@ const skills = [
   "SQL",
   "PostgreSQL",
   "REST API",
+  "LINQ",
+  "DI",
+  "Docker",
   "Git",
   "ООП",
   "SOLID",
@@ -18,6 +21,8 @@ const skills = [
   "CSS",
   "SCSS/SASS",
   "Angular",
+  "RxJS",
+  "Адаптивная вёрстка",
   "Python",
   "Linux",
   "Agile",
@@ -153,10 +158,9 @@ export function ResumeDocument() {
           <p>Инструменты:</p>
           <Dashes
             items={[
-              "Языки и платформа: C#, .NET, ASP.NET Core, JavaScript, TypeScript, Python. ООП и SOLID;",
-              "Данные и API: EF Core, SQL, PostgreSQL, REST API;",
-              "Инструменты: Git, Linux, юнит-тесты, Agile (Scrum, Kanban);",
-              "Дополнительно: HTML, CSS, SCSS/SASS, Angular, JavaScript, TypeScript.",
+              "Backend: C#, .NET, ASP.NET Core, EF Core, LINQ, DI, SQL, PostgreSQL, REST API;",
+              "Frontend: JavaScript, TypeScript, HTML, CSS, SCSS/SASS, Angular, RxJS, адаптивная вёрстка;",
+              "Инструменты: Git, Docker, Linux, юнит-тесты, ООП, SOLID, Agile (Scrum, Kanban).",
             ]}
           />
         </Entry>
@@ -202,7 +206,7 @@ export function ResumeDocument() {
             Дополнительные знания
           </p>
           <p className="text-[14px] leading-5">
-            HTML, CSS, SCSS/SASS, Angular, JavaScript, TypeScript
+            HTML, CSS, SCSS/SASS, Angular, RxJS, JavaScript, TypeScript, адаптивная вёрстка
           </p>
         </div>
       </section>
