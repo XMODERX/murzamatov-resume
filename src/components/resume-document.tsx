@@ -23,7 +23,6 @@ const skills = [
   "Angular",
   "RxJS",
   "Адаптивная вёрстка",
-  "Python",
   "Linux",
   "Agile",
   "Scrum",
@@ -55,19 +54,6 @@ function Entry({
       </div>
       <div className="text-[14px] leading-[1.45]">{children}</div>
     </div>
-  );
-}
-
-function Dashes({ items }: { items: string[] }) {
-  return (
-    <ul className="mt-1.5 flex flex-col gap-1">
-      {items.map((item) => (
-        <li key={item} className="flex gap-2">
-          <span aria-hidden="true">—</span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -111,7 +97,7 @@ export function ResumeDocument() {
       <section>
         <SectionTitle>Желаемая должность и зарплата</SectionTitle>
         <p className="mt-2.5 text-[16px] font-bold leading-6">
-          Backend / Frontend разработчик
+          Junior C#/.NET-разработчик
         </p>
         <p className="mt-2 text-[14px] leading-5">Специализации:</p>
         <p className="text-[14px] leading-5">— Программист, разработчик</p>
@@ -130,23 +116,18 @@ export function ResumeDocument() {
             Инструмент калькуляции себестоимости товара
           </p>
           <p className="mt-2">
-            Автоматизировал процессы расчётов и создал инструмент калькуляции
-            себестоимости товара.
+            Проект для предприятия: инструмент калькуляции себестоимости
+            товара по данным предприятия.
           </p>
-          <p className="mt-3">Обязанности:</p>
-          <Dashes
-            items={[
-              "Автоматизировал процессы расчёта себестоимости;",
-              "Создал инструмент для расчётов по данным предприятия.",
-            ]}
-          />
+          <p className="mt-2">
+            Создал инструмент калькуляции себестоимости товара по данным
+            предприятия и автоматизировал процессы расчёта себестоимости.
+          </p>
         </Entry>
 
         <Entry when="2026" note="проект">
           <p className="font-bold leading-5">Администрирование проектов</p>
-          <p className="mt-2">
-            Вёл проекты от постановки задач до сдачи результата.
-          </p>
+          <p className="mt-2">Администрировал проекты.</p>
         </Entry>
 
         <Entry when="2026" note="проект">
@@ -154,20 +135,8 @@ export function ResumeDocument() {
             Администрирование и поддержка серверов и плагинов
           </p>
           <p className="mt-2">
-            Поддерживал серверы и плагины в рабочем состоянии и оптимизировал
-            их работу.
+            Администрировал серверы и поддерживал плагины.
           </p>
-        </Entry>
-
-        <Entry>
-          <p>Инструменты:</p>
-          <Dashes
-            items={[
-              "Backend: C#, .NET, ASP.NET Core, EF Core, LINQ, DI, SQL, PostgreSQL, REST API;",
-              "Frontend: JavaScript, TypeScript, HTML, CSS, SCSS/SASS, Angular, RxJS, адаптивная вёрстка;",
-              "Инструменты: Git, Docker, Linux, юнит-тесты, ООП, SOLID, Agile (Scrum, Kanban).",
-            ]}
-          />
         </Entry>
       </section>
 
@@ -206,14 +175,6 @@ export function ResumeDocument() {
             ))}
           </ul>
         </div>
-        <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-[148px_minmax(0,1fr)] sm:gap-x-6">
-          <p className="text-[14px] leading-5 text-[#767676]">
-            Дополнительные знания
-          </p>
-          <p className="text-[14px] leading-5">
-            HTML, CSS, SCSS/SASS, Angular, RxJS, JavaScript, TypeScript, адаптивная вёрстка
-          </p>
-        </div>
       </section>
 
       <section className="break-inside-avoid">
@@ -222,10 +183,10 @@ export function ResumeDocument() {
           <p className="text-[14px] leading-5 text-[#767676]">Обо мне</p>
           <div className="flex flex-col gap-3 text-[14px] leading-[1.45]">
             <p>
-              Backend / Frontend разработчик с опытом 1,5 года. Делаю
-              серверную часть на C#, .NET и ASP.NET Core и интерфейсы на
-              Angular и TypeScript: от требований и проектирования до
-              реализации, поддержки и релиза.
+              Программист с опытом 1,5 года. Самостоятельно веду задачи от
+              разбора требований и проектирования решения до реализации,
+              поддержки и релиза. Создал инструмент калькуляции себестоимости
+              товара и автоматизировал расчёты.
             </p>
             <div>
               <p>
